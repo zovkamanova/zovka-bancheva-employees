@@ -1,0 +1,54 @@
+﻿@model IEnumerable<EmplpyeeProjectZovkaBancheva.Models.TeamViewModel>
+
+@{
+    ViewData["Title"] = "Table Teams Worked Together";
+}
+<head>
+    <style>
+        #tableStyle {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #tableStyle td, #tableStyle th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #tableStyle tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #tableStyle tr:hover {
+                background-color: #ddd;
+            }
+
+            #tableStyle th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #4CAF50;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    <table id="tableStyle">
+        <tr>
+            <th> First Employee Id</th>
+            <th> Second Employee Id</th>
+            <th> Project Id</th>
+            <th> Days Worked</th>
+        </tr>
+        @foreach (var modelItem in Model)
+        {
+            <tr>
+                <td>@modelItem.FirstUserId </td>
+                <td>@modelItem.SecondUserId </td>
+                <td>@modelItem.ProjectID </td>
+                <td>@modelItem.DaysSpentTogether </td>
+            </tr>
+        }
+    </table>
+</body>
