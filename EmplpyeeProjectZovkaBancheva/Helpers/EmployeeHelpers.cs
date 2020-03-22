@@ -14,9 +14,6 @@ namespace EmplpyeeProjectZovkaBancheva.Helpers
         {
             List<TeamViewModel> allWorkTogether = new List<TeamViewModel>();
 
-            //Creating a Dictionaty of Tuples that will contain the data, related to the Users, Projects and times spent on the project
-            Dictionary<Tuple<int, int>, Dictionary<int, int>> d = new Dictionary<Tuple<int, int>, Dictionary<int, int>>();
-
             //Grouping the employee models by ProjectId
             var employeesGroupedByProject = allEmployees
                 .GroupBy(emp => emp.ProjectID)
