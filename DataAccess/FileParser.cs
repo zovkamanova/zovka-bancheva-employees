@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using DataAccess.Interfaces;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace DataAccess
 {
-   public class FileParser
+   public class FileParser :IFileParser
     {
         //This is a method that is parsing the data coming from file and set it to the EmployeeWork model and returns a list of EmployeeWork models
         public List<EmployeeWork> ParseDataFromFile(List<string[]> rowsInFile)

@@ -1,3 +1,6 @@
+using DataAccess;
+using DataAccess.Interfaces;
+using EmplpyeeProjectZovkaBancheva.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -23,6 +26,10 @@ namespace EmplpyeeProjectZovkaBancheva
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+            services.AddTransient<IFileReader, FileReader>();
+            services.AddTransient<IFileParser, FileParser>();
+            services.AddTransient<IEmployeeHelpers, EmployeeHelpers>();
 
             //Disabling the endpoing routing
             services.AddMvc(options => options.EnableEndpointRouting = false);

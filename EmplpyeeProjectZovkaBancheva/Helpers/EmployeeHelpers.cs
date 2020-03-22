@@ -7,7 +7,7 @@ using System.Linq;
 namespace EmplpyeeProjectZovkaBancheva.Helpers
 {
     //Helper class that finds the teams that worked longest together on a project
-    class EmployeeHelpers
+    public class EmployeeHelpers : IEmployeeHelpers
     {
         //A method that finds the teams that worked longest together on a project and returns a list of these teams
         public List<TeamViewModel> FindWorkTogether(List<EmployeeWork> allEmployees)
@@ -93,12 +93,12 @@ namespace EmplpyeeProjectZovkaBancheva.Helpers
             return teamWork;
         }
         //A method that calculates the difference between two dates in days
-        public static int CalculateDifference(DateTime DateFrom, DateTime DateTo)
+        public int CalculateDifference(DateTime DateFrom, DateTime DateTo)
         {
             return (int)(DateTo - DateFrom).TotalDays;
         }
         //A method that calculates days spent together on project
-        public static int CalculateDaysTogether(DateTime startFirstUser, DateTime startSecondUser, DateTime endFirstUser, DateTime endSecondUser)
+        public int CalculateDaysTogether(DateTime startFirstUser, DateTime startSecondUser, DateTime endFirstUser, DateTime endSecondUser)
         {
             int daysTogether = 0;
 

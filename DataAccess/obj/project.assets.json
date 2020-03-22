@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\EmplpyeeProjectZovkaBancheva\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\zovka-bancheva-employees\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\User\\source\\repos\\EmplpyeeProjectZovkaBancheva\\DataAccess\\DataAccess.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\zovka-bancheva-employees\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\EmplpyeeProjectZovkaBancheva\\DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\zovka-bancheva-employees\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,8 +52,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\User\\source\\repos\\EmplpyeeProjectZovkaBancheva\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\User\\source\\repos\\EmplpyeeProjectZovkaBancheva\\Models\\Models.csproj"
+            "C:\\Users\\User\\Documents\\GitHub\\zovka-bancheva-employees\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\User\\Documents\\GitHub\\zovka-bancheva-employees\\Models\\Models.csproj"
             }
           }
         }

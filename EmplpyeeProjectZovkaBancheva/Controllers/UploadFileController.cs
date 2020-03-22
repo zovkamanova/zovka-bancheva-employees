@@ -1,4 +1,5 @@
 ﻿using DataAccess;
+using DataAccess.Interfaces;
 using EmplpyeeProjectZovkaBancheva.Helpers;
 using EmplpyeeProjectZovkaBancheva.Models;
 using Microsoft.AspNetCore.Http;
@@ -13,13 +14,17 @@ namespace EmplpyeeProjectZovkaBancheva.Controllers
 {
     public class UploadFileController : Controller
     {
+        IFileReader _fileReader;
+        IEmployeeHelpers _employeeHelpers;
+        public UploadFileController(IFileReader fileReader,IEmployeeHelpers employeeHelpers)
+        {
+            _fileReader = fileReader;
+            _employeeHelpers = employeeHelpers;
+        }
         [HttpPost("UploadFile")]
         public async Task<IActionResult> Index(IFormFile file)
         {
-            //Instantiating the two helper classes 
 
-            FileReader fileReader = new FileReader();
-            EmployeeHelpers helpers = new EmployeeHelpers();
             string filePath = "";
 
             //Creating a try/catch block to prevent breaking the application if the file is not found or is in a bad format 
@@ -38,10 +43,10 @@ namespace EmplpyeeProjectZovkaBancheva.Controllers
                 }
 
                 //Setting  a list of employees which are read from the file
-                List<EmployeeWork> employeesListFromFile = fileReader.ReadFromFile(filePath);
+                List<EmployeeWork> employeesListFromFile = _fileReader.ReadFromFile(filePath);
 
                 //Setting a list of the teams worked longest on projects, ap the pass it to the view
-                List<TeamViewModel> teamViewModels = helpers.FindWorkTogether(employeesListFromFile);
+                List<TeamViewModel> teamViewModels = _employeeHelpers.FindWorkTogether(employeesListFromFile);
 
                 return View(teamViewModels);
             }
